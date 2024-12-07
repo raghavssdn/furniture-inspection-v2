@@ -1,0 +1,8 @@
+.dictionary-list-prt {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(125, 123, 123);
+    .dictionary-list {
+        padding: 10px;
+    }
+}
