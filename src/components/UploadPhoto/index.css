@@ -1,0 +1,84 @@
+p {
+    margin: 0px;
+}
+
+.grid-item {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 350px;
+    border-radius: 8px; /* Add rounded corners for better aesthetics */
+    background-color: #f9f9f9; /* Light background color for better contrast */
+}
+
+.caption {
+    margin-top: auto;
+    font-size: 14px;
+}
+
+.image-preview {
+    width: 100%;
+    height: 75%;
+    margin-bottom: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px; /* Match border radius with the grid item */
+    overflow: hidden; /* Ensure the image fits within the container */
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: auto;
+    align-self: center;
+    width: 100%;
+}
+
+.upload-btn {
+    /* background-color: orange;
+    color: white; */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    appearance: none; /* Remove default styles for input buttons */
+    -webkit-appearance: none;
+    position: relative; /* Required for hiding default text */
+}
+
+.upload-btn::-webkit-file-upload-button {
+    visibility: hidden; /* Hide the default file upload button */
+}
+
+.upload-btn::before {
+    content: "Upload Image"; /* Custom button text */
+    display: inline-block;
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.upload-btn:hover::before {
+    background-color: darkorange;
+}

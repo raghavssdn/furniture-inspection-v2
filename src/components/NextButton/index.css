@@ -1,0 +1,14 @@
+.d-flex {
+    display: flex;
+}
+
+#next-btn{
+    margin-top: 20px;
+    .next-btn {
+        margin-left: auto;
+        background-color: orange;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+}

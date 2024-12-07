@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  margin-top: 0;
+  .heading-title {
+    margin: 0;
+  }
+  .subtitle {
+    margin: 0;
+  }
+}
+.header-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  .header-table {
+    width: 100%;
+    .bold-column {
+      font-weight: bold;
+    }
+    .select-dropdown {
+      width: 100%;
+      padding: 2%;
+      background: antiquewhite;
+    }
+    .inspection {
+      border: none;
+    }
+  }
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+}
