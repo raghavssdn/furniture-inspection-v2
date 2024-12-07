@@ -1,38 +1,99 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  h3{
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    /* width: 100%; */
-    margin: 0 auto;
-    padding: 10px;
-  }
-  
-  .cust-header {
-    background-color: orange;
-    margin-bottom: 10px;
-    color: white;
-    padding: 5px;
-    font-weight: bold;
-    border: 1px solid black;
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 5px; /* Space between items */
-  }
+h3 {
+  margin: 0;
+  padding: 0;
+}
 
-  .d-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+.container {
+  /* width: 100%; */
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.cust-header {
+  background-color: orange;
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+  border: 1px solid black;
+  margin-bottom: 0px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Two columns */
+  gap: 5px;
+  /* Space between items */
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inspection-summary,
+.defect-categories {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 60px;
+}
+
+.inspection-summary th,
+.inspection-summary td,
+.defect-categories th,
+.defect-categories td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.inspection-summary th {
+  background-color: #ebe9e7;
+  color: rgb(41, 40, 40);
+}
+
+.highlight {
+  color: red !important;
+  font-weight: bold;
+}
+
+.link-prnt {
+  text-align: left !important;
+}
+
+.link {
+  text-decoration: underline;
+  margin-left: 10px;
+}
+
+.defect-categories th {
+  background-color: #f3f3f3;
+  /* Light grey header */
+}
+
+.defect-categories tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.grand-total {
+  font-weight: bold;
+  background-color: #f3f3f3;
+  text-align: left;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+}

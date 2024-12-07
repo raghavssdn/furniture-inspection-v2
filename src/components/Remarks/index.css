@@ -1,0 +1,10 @@
+.textarea {
+    width: 100%; /* Adjust width as needed */
+    height: 250px; /* Adjust height as needed */
+    resize: none; /* Disable resizing */
+    font-size: 14px; /* Optional: make the text more readable */
+    padding: 10px; /* Optional: add padding for better spacing */
+    border: 1px solid #ccc; /* Optional: border styling */
+    border-radius: 5px; /* Optional: rounded corners */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }

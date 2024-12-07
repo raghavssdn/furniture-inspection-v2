@@ -29,6 +29,7 @@ import { Header } from "./components/Header/Header";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { getReportNumber } from "./utils/utils";
+import Remarks from "./components/Remarks";
 
 function App() {
   const [canvasCaptured, setCanvasCaptured] = useState([]);
@@ -297,7 +298,7 @@ function App() {
             path={`/remarks`}
             element={
               <ProtectedRoute>
-                <MainUploadPages
+                <Remarks
                   pageId={"remarks"}
                   generatePdf={generatePdf}
                   captureCanvas={captureCanvas}
