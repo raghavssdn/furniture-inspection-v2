@@ -58,7 +58,7 @@ function App() {
   };
 
   const generatePdf = async () => {
-    if (canvasRefs.current.length === 6) {
+    if (canvasRefs.current.length > 0) {
       setLoading(true); // Show loader
 
       const pdf = new jsPDF("p", "mm", "a4");
