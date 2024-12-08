@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "../Remarks/index.css";
 import { Header } from "../Header/Header";
@@ -16,6 +16,13 @@ const Remarks = ({
   next,
   showListMenu,
 }) => {
+  const captureAndGeneratePdf = async (isGen) => {
+    // if (!hasCaptured) { // Check if we have already captured
+    await captureCanvas(pageId, currentPage); // Capture canvas for contact page
+    // setHasCaptured(true); // Set the flag to true after capturing
+    // }
+    if (isGen) generatePdf();
+  };
   return (
     <>
       <div className="container" id={pageId}>
@@ -27,7 +34,18 @@ const Remarks = ({
         <textarea className="textarea" />
         <div className="d-flex">
           {back !== undefined ? <BackButton page={back} /> : null}
-          {next !== undefined ? <NextButton page={next} /> : null}
+          {next !== undefined ? (
+            <NextButton page={next} />
+          ) : (
+            pageId === "remarks" && (
+              <button
+                onClick={() => captureAndGeneratePdf(true)}
+                className="download"
+              >
+                Download PDF
+              </button>
+            )
+          )}
         </div>
       </div>
     </>

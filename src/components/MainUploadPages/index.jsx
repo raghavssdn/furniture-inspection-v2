@@ -22,14 +22,13 @@ const MainUploadPages = ({
   const [hasCaptured, setHasCaptured] = useState(false); // State to track if capture has occurred
   const navigate = useNavigate();
 
-  const captureAndGeneratePdf = async (isGen) => {
+  const captureAndGeneratePdf = async () => {
     // if (!hasCaptured) { // Check if we have already captured
     await captureCanvas(pageId, currentPage); // Capture canvas for contact page
     // setHasCaptured(true); // Set the flag to true after capturing
     // }
-    if (isGen) generatePdf();
   };
-
+  console.log(pageId);
   return (
     <>
       <div className="container" id={pageId}>
@@ -47,15 +46,10 @@ const MainUploadPages = ({
         </div>
         <div className="d-flex">
           {back !== undefined ? <BackButton page={back} /> : null}
-          <div onClick={() => captureAndGeneratePdf(false)}>
+          <div onClick={captureAndGeneratePdf}>
             {next !== undefined ? <NextButton page={next} /> : null}
           </div>
         </div>
-        {pageId === "on-site-test" && (
-          <button onClick={() => captureAndGeneratePdf(true)}>
-            Download PDF
-          </button>
-        )}
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import {
   BrowserRouter as Router,
@@ -68,7 +68,7 @@ function App() {
         console.log(index);
         const imgData = canvas.toDataURL("image/png");
         const imgWidth = 210; // A4 width in mm
-        const imgHeight = (canvas.height * imgWidth) / (canvas.width * 1.5);
+        const imgHeight = (canvas.height * imgWidth) / (canvas.width * 2);
 
         if (index > 0) {
           pdf.addPage();
@@ -82,6 +82,18 @@ function App() {
       console.log("Canvases are not fully captured yet.", canvasCaptured);
     }
   };
+
+  useEffect(() => {
+    window.addEventListener("beforeunload", () => {
+      sessionStorage.clear(); // Clears session data on reload
+    });
+
+    return () => {
+      window.removeEventListener("beforeunload", () => {
+        sessionStorage.clear();
+      });
+    };
+  }, []);
 
   return (
     <>
@@ -121,12 +133,11 @@ function App() {
             }
           />
           <Route
-            pageId={"inspection-summary"}
             path={`/inspection-summary`}
             element={
               <ProtectedRoute>
                 <InspectionSummary
-                  pageId="product-specification"
+                  pageId={"inspection-summary"}
                   generatePdf={generatePdf}
                   captureCanvas={captureCanvas}
                   heading={"II. INSPECTION SUMMARY"}

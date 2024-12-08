@@ -15,8 +15,13 @@ const InspectionSummary = ({
   currentPage,
   next,
 }) => {
+  const captureAndGeneratePdf = async () => {
+    console.log(pageId, currentPage);
+    await captureCanvas(pageId, currentPage); // Capture canvas for contact page
+  };
+
   return (
-    <>
+    <div id={pageId}>
       <Header />
       <div className="container">
         <div className="cust-header">
@@ -243,10 +248,12 @@ const InspectionSummary = ({
 
         <div className="d-flex">
           <BackButton page={back} />
-          <NextButton page={next} />
+          <div onClick={captureAndGeneratePdf}>
+            {next !== undefined ? <NextButton page={next} /> : null}
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
